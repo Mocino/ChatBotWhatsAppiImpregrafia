@@ -7,8 +7,12 @@ const abrigoMessage = require("../shared/Catalogos/Abrigos/abrigoMessage");
 const gorroMessage = require("../shared/Catalogos/Gorros/gorroMessage");
 
 const RespuestasCamisas = require("../shared/Respuestas/RespuestasCamisas");
+const RespuestasAbrigos = require("../shared/Respuestas/RespuestasAbrigos");
+const RespuestasPantalones = require("../shared/Respuestas/RespuestasPantalones");
+const RespuestasCalzado = require("../shared/Respuestas/RespuestasCalzado");
+const RespuestasGorros = require("../shared/Respuestas/RespuestasGorros");
 
-const { text } = require("express");
+//const { text } = require("express");
 
 function Process(textUser, number){
     textUser = textUser.toLowerCase();
@@ -25,41 +29,24 @@ function Process(textUser, number){
         var model = whatsAppModel.MessageText("Gracias a ti por escribirme", number);
         models.push(model);
     }
-    else if(RespuestasCamisas.camisas.some(palabra => textUser.includes(palabra))){
+    else if(RespuestasCamisas.getAllCamisaKeywords().some(palabra => textUser.includes(palabra))){
         camisaMessage.ProcessCamisa(textUser, number);
         return; // Salimos de la función porque ProcessCamisa se encarga de enviar los mensajes
-    } else if (textUser.includes('👖 pantalones') || 
-               textUser.includes('colores de pantalones') || 
-               textUser.includes('diseños de pantalones') || 
-               textUser.includes('materiales de pantalones') || 
-               textUser.includes('precios de pantalones')) {
+    }     
+    else if (RespuestasPantalones.pantalones.some(palabra => textUser.includes(palabra))) {
         pantalonMessage.ProcessPantalon(textUser, number);
         return; // Salimos de la función porque ProcessPantalon se encarga de enviar los mensajes
-    } else if (textUser.includes('👟 calzado') || 
-               textUser.includes('colores de calzado') || 
-               textUser.includes('diseños de calzado') || 
-               textUser.includes('materiales de calzado') || 
-               textUser.includes('precios de calzado') ||  
-               textUser.includes('ver modelos de calzado')) {
+    } 
+    else if (RespuestasCalzado.calzado.some(palabra => textUser.includes(palabra))) {
         calzadoMessage.ProcessCalzado(textUser, number);
         return; // Salimos de la función porque ProcessCalzado se encarga de enviar los mensajes
-    }else if (textUser.includes('🧥 abrigos') || 
-              textUser.includes('colores de abrigos') || 
-              textUser.includes('diseños de abrigos') || 
-              textUser.includes('materiales de abrigos') || 
-              textUser.includes('precios de abrigos') || 
-              textUser.includes('abrigo negro') ||  
-              textUser.includes('abrigo gris') ||  
-              textUser.includes('abrigo marrón')
-    ) {
+    }
+    else if (RespuestasAbrigos.getAllAbrigoKeywords().some(palabra => textUser.includes(palabra)))
+    {
         abrigoMessage.ProcessAbrigo(textUser, number);
-        return; // Salimos de la función porque ProcessAbrigo se encarga de enviar los mensajes
-    }    
-     else if (textUser.includes('🧢 gorros') || 
-              textUser.includes('colores de gorra') || 
-              textUser.includes('diseños de gorra') || 
-              textUser.includes('materiales de gorra') || 
-              textUser.includes('precios de gorra')) {
+        return; 
+    }     
+    else if (RespuestasGorros.gorros.some(palabra => textUser.includes(palabra))) {
         gorroMessage.ProcessGorro(textUser, number);
         return; // Salimos de la función porque ProcessGorro se encarga de enviar los mensajes
     }
