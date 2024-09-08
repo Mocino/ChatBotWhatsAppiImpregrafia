@@ -29,19 +29,19 @@ function GorrosList(number) {
                         'rows': [
                             {
                                 'id': 'colores',
-                                'title': '🎨 Colores'
+                                'title': 'colores de gorra'
                             },
                             {
                                 'id': 'disenos',
-                                'title': '✏️ Diseños'
+                                'title': 'diseños de gorra'
                             },
                             {
                                 'id': 'materiales',
-                                'title': '🧵 Materiales'
+                                'title': 'materiales de gorra'
                             },
                             {
                                 'id': 'precios',
-                                'title': '💰 Precios'
+                                'title': 'precios de gorra'
                             }
                         ]
                     }

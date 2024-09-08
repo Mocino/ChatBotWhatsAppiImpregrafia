@@ -13,19 +13,19 @@ function ProcessPantalon(textUser, number) {
         var model = pantalonModel.MessageText("👖 Ha seleccionado Pantalones. ¿Qué te gustaría saber más?", number);
         models.push(model);
     }    
-    else if (textUser.includes('colores')) {
+    else if (textUser.includes('colores de pantalones')) {
         var model = pantalonModel.MessageText("🌈 Tenemos pantalones en colores: negro, azul, gris y beige.", number);
         models.push(model);
     }
-    else if (textUser.includes('diseños')) {
+    else if (textUser.includes('diseños de pantalones')) {
         var model = pantalonModel.MessageText("🖼️ Ofrecemos diseños: lisos, a cuadros y de mezclilla.", number);
         models.push(model);
     }
-    else if (textUser.includes('materiales')) {
+    else if (textUser.includes('materiales de pantalones')) {
         var model = pantalonModel.MessageText("🔍 Nuestros pantalones están disponibles en: algodón, poliéster, mezclilla y lino.", number);
         models.push(model);
     }
-    else if (textUser.includes('precios')) {
+    else if (textUser.includes('precios de pantalones')) {
         var model = pantalonModel.MessageText("💵 Los precios varían desde $30 hasta $120 dependiendo del modelo y material.", number);
         models.push(model);
     }

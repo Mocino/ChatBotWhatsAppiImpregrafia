@@ -10,6 +10,45 @@ function MessageText(textResponse, number) {
     return data;
 }
 
+function AbrigosColoresList(number) {
+    const data = JSON.stringify({
+        'messaging_product': 'whatsapp',
+        'recipient_type': 'individual',
+        'to': number,
+        'type': 'interactive',
+        'interactive': {
+            'type': 'list',
+            'body': {
+                'text': 'Seleccione un color específico para obtener más información:'
+            },
+            'action': {
+                'button': 'Ver colores',
+                'sections': [
+                    {
+                        'title': 'Colores de Abrigos',
+                        'rows': [
+                            {
+                                'id': 'negro',
+                                'title': 'abrigo negro'
+                            },
+                            {
+                                'id': 'gris',
+                                'title': 'abrigo gris'
+                            },
+                            {
+                                'id': 'marrón',
+                                'title': 'abrigo marrón'
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    });
+    return data;
+}
+
+
 function AbrigosList(number) {
     const data = JSON.stringify({
         'messaging_product': 'whatsapp',
@@ -29,19 +68,19 @@ function AbrigosList(number) {
                         'rows': [
                             {
                                 'id': 'colores',
-                                'title': '🎨 Colores'
+                                'title': 'colores de abrigos'
                             },
                             {
                                 'id': 'disenos',
-                                'title': '✏️ Diseños'
+                                'title': 'diseños de abrigos'
                             },
                             {
                                 'id': 'materiales',
-                                'title': '🧵 Materiales'
+                                'title': 'materiales de abrigos'
                             },
                             {
                                 'id': 'precios',
-                                'title': '💰 Precios'
+                                'title': 'precios de abrigos'
                             }
                         ]
                     }
@@ -54,5 +93,6 @@ function AbrigosList(number) {
 
 module.exports = {
     MessageText,
-    AbrigosList
+    AbrigosList,
+    AbrigosColoresList
 };

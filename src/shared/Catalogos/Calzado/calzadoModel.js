@@ -29,23 +29,23 @@ function CalzadoList(number) {
                         'rows': [
                             {
                                 'id': 'colores',
-                                'title': '🎨 Colores'
+                                'title': 'colores de calzado'
                             },
                             {
                                 'id': 'disenos',
-                                'title': '✏️ Diseños'
+                                'title': 'diseños de calzado'
                             },
                             {
                                 'id': 'materiales',
-                                'title': '🧵 Materiales'
+                                'title': 'materiales de calzado'
                             },
                             {
                                 'id': 'precios',
-                                'title': '💰 Precios'
+                                'title': 'precios de calzado'
                             },
                             {
                                 'id': 'ver_modelos',
-                                'title': '👟 Ver Modelos'
+                                'title': 'ver modelos de calzado'
                             }
                         ]
                     }

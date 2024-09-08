@@ -29,19 +29,19 @@ function PantalonesList(number) {
                         'rows': [
                             {
                                 'id': 'colores',
-                                'title': '🎨 Colores'
+                                'title': 'colores de pantalones'
                             },
                             {
                                 'id': 'disenos',
-                                'title': '✏️ Diseños'
+                                'title': 'diseños de pantalones'
                             },
                             {
                                 'id': 'materiales',
-                                'title': '🧵 Materiales'
+                                'title': 'materiales de pantalones'
                             },
                             {
                                 'id': 'precios',
-                                'title': '💰 Precios'
+                                'title': 'precios de pantalones'
                             }
                         ]
                     }

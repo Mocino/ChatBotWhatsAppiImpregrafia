@@ -29,19 +29,19 @@ function CamisasList(number) {
                         'rows': [
                             {
                                 'id': 'colores',
-                                'title': '🎨 Colores'
+                                'title': 'colores de camisas'
                             },
                             {
                                 'id': 'disenos',
-                                'title': '✏️ Diseños'
+                                'title': 'diseños de camisas'
                             },
                             {
                                 'id': 'materiales',
-                                'title': '🧵 Materiales'
+                                'title': 'materiales de camisas'
                             },
                             {
                                 'id': 'precios',
-                                'title': '💰 Precios'
+                                'title': 'precios de camisas'
                             }
                         ]
                     }

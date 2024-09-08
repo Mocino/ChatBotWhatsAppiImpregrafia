@@ -12,19 +12,19 @@ function ProcessGorro(textUser, number) {
         var model = gorroModel.MessageText("🧢 Ha seleccionado Gorro. ¿Qué te gustaría saber más?", number);
         models.push(model);
     }    
-    else if (textUser.includes('colores')) {
+    else if (textUser.includes('colores de gorra')) {
         var model = gorroModel.MessageText("🌈 Tenemos gorros en colores: negro, azul, rojo, verde y beige.", number);
         models.push(model);
     }
-    else if (textUser.includes('diseños')) {
+    else if (textUser.includes('diseños de gorra')) {
         var model = gorroModel.MessageText("🖼️ Ofrecemos diseños: lisos, a rayas, con logotipo y bordados.", number);
         models.push(model);
     }
-    else if (textUser.includes('materiales')) {
+    else if (textUser.includes('materiales de gorra')) {
         var model = gorroModel.MessageText("🔍 Nuestros gorros están disponibles en: lana, acrílico, algodón y mezclas sintéticas.", number);
         models.push(model);
     }
-    else if (textUser.includes('precios')) {
+    else if (textUser.includes('precios de gorra')) {
         var model = gorroModel.MessageText("💵 Los precios varían desde $10 hasta $50 dependiendo del modelo y material.", number);
         models.push(model);
     }
