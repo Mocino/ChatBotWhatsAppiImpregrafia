@@ -16,32 +16,32 @@ function MantasVinilicasMessage(textUser, number) {
         var model = mantasVinilicasModel.MessageText("🖼️ Ha seleccionado mantas vinílicas. ¿Qué te gustaría saber más?", number);
         models.push(model);
     }    
-    // else if (textUser.includes('📏 tamaños mantas')) {
-    //     var model = mantasVinilicasModel.MessageText("📏 Los tamaños de las mantas vinílicas varían según tus necesidades. ¿Te gustaría conocer las dimensiones disponibles?", number);
-    //     models.push(model);
-    // }
-
     else if (RespuestasMantaVinilicas.RespuestaTamaniosMantaVinilica.some(keyword => textUser.includes(keyword))) {
-        // var model = mantasVinilicasModel.MessageText("📏 Los tamaños de las mantas vinílicas varían según tus necesidades. ¿Te gustaría conocer las dimensiones disponibles?", number);
-        // models.push(model);
         DimensionesMantasVinilicas.DimensionesMantasDetalle(textUser, number);
-        return; // Salimos de la función porque ProcessAbrigoPersonalizado se encarga de enviar los mensajes
+        return; 
     }
-
     else if (textUser.includes('🎨 diseños mantas')) {
+        // Envía las opciones de diseño como botones
+        var modelList = mantasVinilicasModel.DiseñoOpcionesBotones(number);
+        models.push(modelList);
+    
         var model = mantasVinilicasModel.MessageText("🎨 Ofrecemos una variedad de diseños y colores para tus mantas vinílicas. ¿Tienes algún diseño en mente?", number);
         models.push(model);
     }
-    else if (textUser.includes('🔧 instalación mantas')) {
-        var model = mantasVinilicasModel.MessageText("🔧 La instalación dependera del lugar. ¿quiere saber sobre los servicios?", number);
+    else if (textUser.includes('✅ sí, tengo diseño')) {
+        var model = mantasVinilicasModel.MessageText("Genial, por favor compártenos tu diseño, después de contestar:", number);
         models.push(model);
-    }
-    else if (textUser.includes('🖨️ impresión mantas')) {
-        var model = mantasVinilicasModel.MessageText("🖨️ Contamos con varias opciones de impresión para tus mantas vinílicas. ¿Qué tipo de impresión prefieres?", number);
+    
+        // Enviar la respuesta de dimensiones después de la confirmación
+        var dimensionsModel = DimensionesMantasVinilicas.DimensionesMantasDetalle(textUser, number);
+        models.push(dimensionsModel);  // Asegúrate de que esta función devuelva un modelo
+        return; 
+    } else if (textUser === '❌ no, tengo diseño') {
+        var model = mantasVinilicasModel.MessageText("🎨 Nuestro servicio de diseños cuesta 70 quetzales", number);
         models.push(model);
-    }
+    }        
     else {
-        var model = mantasVinilicasModel.MessageText("❓ Por favor, seleccione una opción válida del menú de Camisas.", number);
+        var model = mantasVinilicasModel.MessageText("❓ Por favor, seleccione una opción válida del menú de Manta vinilica.", number);
         models.push(model);
     }
 

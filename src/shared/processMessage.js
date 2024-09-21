@@ -44,7 +44,7 @@ function Process(textUser, number){
     }     
 
 
-    else if (textUser.includes('sí')) {
+    else if (textUser.includes('sí, comprar')) {
         var model = whatsAppModel.MessageText("💳 Por favor selecciona una opción de pago:", number);
         models.push(model);
     

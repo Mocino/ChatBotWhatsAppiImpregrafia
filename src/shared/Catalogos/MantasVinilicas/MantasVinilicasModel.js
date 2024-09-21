@@ -22,14 +22,6 @@ function MantasVinilicasList(number) {
                             {
                                 'id': 'disenos',
                                 'title': '🎨 Diseños mantas'  // Título acortado
-                            },
-                            {
-                                'id': 'instalacion',
-                                'title': '🔧 Instalación mantas'  // Título acortado
-                            },
-                            {
-                                'id': 'impresion',
-                                'title': '🖨️ Impresión mantas'  // Título acortado
                             }
                         ]
                     }
@@ -40,6 +32,39 @@ function MantasVinilicasList(number) {
     return data;
 }
 
+function DiseñoOpcionesBotones(number) {
+    const data = JSON.stringify({
+        'messaging_product': 'whatsapp',
+        'recipient_type': 'individual',
+        'to': number,
+        'type': 'interactive',
+        'interactive': {
+            'type': 'button',
+            'body': {
+                'text': '¿Ya tiene diseño?'
+            },
+            'action': {
+                'buttons': [
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'id': 'si_tengo_disenio',
+                            'title': '✅ sí, tengo diseño'
+                        }
+                    },
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'id': 'no_no_tengo_disenio',
+                            'title': '❌ no, tengo diseño'
+                        }
+                    }
+                ]
+            }
+        }
+    });
+    return data;
+}
 function MessageText(text, number) {
     const data = JSON.stringify({
         'messaging_product': 'whatsapp',
@@ -55,5 +80,6 @@ function MessageText(text, number) {
 
 module.exports = {
     MantasVinilicasList,
+    DiseñoOpcionesBotones,
     MessageText
 };

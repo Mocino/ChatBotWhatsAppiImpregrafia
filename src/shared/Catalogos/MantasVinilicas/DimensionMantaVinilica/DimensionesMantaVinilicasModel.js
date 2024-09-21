@@ -67,7 +67,7 @@ function MessageButtons(number) {
                     {
                         'type': 'reply',
                         'reply': {
-                            'title': 'Sí',
+                            'title': 'Sí, comprar',
                             'id': 'comprar' // Este campo 'id' es el correcto para manejar la respuesta
                         }
                     },
@@ -92,9 +92,43 @@ function MessageButtons(number) {
     return data;
 }
 
+function MessageInstalacionButtons(number) {
+    const data = JSON.stringify({
+        'messaging_product': 'whatsapp',
+        'to': number,
+        'type': 'interactive',
+        'interactive': {
+            'type': 'button',
+            'body': {
+                'text': '¿Desea agregar instalación o solo impresión?'
+            },
+            'action': {
+                'buttons': [
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'title': 'Con instalación',
+                            'id': 'con_instalacion'
+                        }
+                    },
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'title': 'Solo impresión',
+                            'id': 'solo_impresion'
+                        }
+                    }
+                ]
+            }
+        }
+    });
+    return data;
+}
+
 
 module.exports = {
     MessageText,
     MantasList,
-    MessageButtons
+    MessageButtons,
+    MessageInstalacionButtons
 };
