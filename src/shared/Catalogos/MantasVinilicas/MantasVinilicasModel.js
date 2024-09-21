@@ -17,7 +17,7 @@ function MantasVinilicasList(number) {
                         'rows': [
                             {
                                 'id': 'tamanos',
-                                'title': '📏 Tamaños mantas'  // Título acortado
+                                'title': '📏 tamaños mantas'  // Título acortado
                             },
                             {
                                 'id': 'disenos',

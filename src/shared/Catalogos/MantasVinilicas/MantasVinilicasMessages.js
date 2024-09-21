@@ -1,5 +1,9 @@
 const mantasVinilicasModel = require("../MantasVinilicas/MantasVinilicasModel");
 const whatsAppService = require("../../../services/whatsappService");
+const RespuestasMantaVinilicas = require("../../Respuestas/RespuestasMantasVinilicas");
+
+const DimensionesMantasVinilicas = require("../../Catalogos/MantasVinilicas/DimensionMantaVinilica/DimensionesMantaVinilicas"); 
+
 
 function MantasVinilicasMessage(textUser, number) {
     textUser = textUser.toLowerCase();
@@ -12,10 +16,18 @@ function MantasVinilicasMessage(textUser, number) {
         var model = mantasVinilicasModel.MessageText("🖼️ Ha seleccionado mantas vinílicas. ¿Qué te gustaría saber más?", number);
         models.push(model);
     }    
-    else if (textUser.includes('📏 tamaños mantas')) {
-        var model = mantasVinilicasModel.MessageText("📏 Los tamaños de las mantas vinílicas varían según tus necesidades. ¿Te gustaría conocer las dimensiones disponibles?", number);
-        models.push(model);
+    // else if (textUser.includes('📏 tamaños mantas')) {
+    //     var model = mantasVinilicasModel.MessageText("📏 Los tamaños de las mantas vinílicas varían según tus necesidades. ¿Te gustaría conocer las dimensiones disponibles?", number);
+    //     models.push(model);
+    // }
+
+    else if (RespuestasMantaVinilicas.RespuestaTamaniosMantaVinilica.some(keyword => textUser.includes(keyword))) {
+        // var model = mantasVinilicasModel.MessageText("📏 Los tamaños de las mantas vinílicas varían según tus necesidades. ¿Te gustaría conocer las dimensiones disponibles?", number);
+        // models.push(model);
+        DimensionesMantasVinilicas.DimensionesMantasDetalle(textUser, number);
+        return; // Salimos de la función porque ProcessAbrigoPersonalizado se encarga de enviar los mensajes
     }
+
     else if (textUser.includes('🎨 diseños mantas')) {
         var model = mantasVinilicasModel.MessageText("🎨 Ofrecemos una variedad de diseños y colores para tus mantas vinílicas. ¿Tienes algún diseño en mente?", number);
         models.push(model);
