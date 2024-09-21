@@ -13,7 +13,16 @@ module.exports = {
         "abrigo gris",
         "abrigo marrón"
     ],
+    abrigosThirddottwo: [
+        "abrigo personalizados",
+        "precio de abrigos",
+        "formas de pagos",
+        'banco',
+        'paypal',
+        'sí',
+        'no'
+    ],
     getAllAbrigoKeywords() {
-        return [...this.abrigosPrincipal, ...this.abrigosSecond, ...this.abrigosThird];
+        return [...this.abrigosPrincipal, ...this.abrigosSecond, ...this.abrigosThird, ...this.abrigosThirddottwo];
     }
 };

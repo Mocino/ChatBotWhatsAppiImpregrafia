@@ -1,6 +1,9 @@
 const abrigoModel = require("../Abrigos/abrigoModel");
 const whatsAppService = require("../../../services/whatsappService");
 const abrigoDetallesMessage = require("../../Catalogos/Abrigos/AbrigosColores/abrigoDetallesMessage"); 
+const abrigoPersonalizadoMessage = require("../../Catalogos/Abrigos/AbrigosColores/abrigoPersonalizado"); 
+const RespuestasAbrigos = require("../../../shared/Respuestas/RespuestasAbrigos");
+
 
 function ProcessAbrigo(textUser, number) {
     textUser = textUser.toLowerCase();
@@ -38,6 +41,10 @@ function ProcessAbrigo(textUser, number) {
     else if (textUser.includes('abrigo negro') || textUser.includes('abrigo gris') || textUser.includes('abrigo marrón')) {
         abrigoDetallesMessage.ProcessAbrigoDetalles(textUser, number);
         return;
+    }
+    else if (RespuestasAbrigos.abrigosThirddottwo.some(keyword => textUser.includes(keyword))) {
+        abrigoPersonalizadoMessage.ProcessAbrigoPersonalizado(textUser, number);
+        return; // Salimos de la función porque ProcessAbrigoPersonalizado se encarga de enviar los mensajes
     }
     else {
         var model = abrigoModel.MessageText("❓ Por favor, selecciona una opción válida sobre abrigos (Colores, Diseños, Materiales, Precios).", number);
