@@ -81,6 +81,10 @@ function MessageList(number) {
                                 'id': '0001',
                                 'title': '🖼️ Mantas vinílicas'
                             },
+                            {
+                                'id': '0002',
+                                'title': '🖌️ sublimación'
+                            },
                         ]
                     }
                 ]
