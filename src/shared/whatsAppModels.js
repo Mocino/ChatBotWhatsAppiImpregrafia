@@ -28,6 +28,10 @@ function MessageList(number) {
                         'title': 'Opciones',
                         'rows': [
                             {
+                                'id': '0001',
+                                'title': '🖼️ Mantas vinílicas'
+                            },
+                            {
                                 'id': '001',
                                 'title': '👕 Camisas'
                             },

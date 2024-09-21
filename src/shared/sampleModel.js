@@ -113,6 +113,10 @@ function SampleList(number) {
                         'title': 'Opciones',
                         'rows': [
                             {
+                                'id': '006',
+                                'title': '🖼️ Mantas vinílicas'
+                            },
+                            {
                                 'id': '001',
                                 'title': '👕 Camisas'
                             },
@@ -126,7 +130,7 @@ function SampleList(number) {
                             },
                             {
                                 'id': '004',
-                                'title': '🧥 Abrigos'
+                                'title': 'ABRIGOS 🧥'
                             },
                             {
                                 'id': '005',

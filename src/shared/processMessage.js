@@ -6,6 +6,11 @@ const calzadoMessage = require("../shared/Catalogos/Calzado/calzadoMessage");
 const abrigoMessage = require("../shared/Catalogos/Abrigos/abrigoMessage");
 const gorroMessage = require("../shared/Catalogos/Gorros/gorroMessage");
 
+
+const MantasVinilicasMessage = require("../shared/Catalogos/MantasVinilicas/MantasVinilicasMessages");
+
+const RespuestasMantaVinilicas = require("../shared/Respuestas/RespuestasMantasVinilicas");
+
 const RespuestasCamisas = require("../shared/Respuestas/RespuestasCamisas");
 const RespuestasAbrigos = require("../shared/Respuestas/RespuestasAbrigos");
 const RespuestasPantalones = require("../shared/Respuestas/RespuestasPantalones");
@@ -29,6 +34,17 @@ function Process(textUser, number){
         var model = whatsAppModel.MessageText("Gracias a ti por escribirme", number);
         models.push(model);
     }
+    
+
+
+    else if(RespuestasMantaVinilicas.getAllMantasVinilicasKeywords().some(palabra => textUser.includes(palabra))){
+        MantasVinilicasMessage.MantasVinilicasMessage(textUser, number);
+        return; // Salimos de la función porque ProcessCamisa se encarga de enviar los mensajes
+    }     
+
+
+
+
     else if(RespuestasCamisas.getAllCamisaKeywords().some(palabra => textUser.includes(palabra))){
         camisaMessage.ProcessCamisa(textUser, number);
         return; // Salimos de la función porque ProcessCamisa se encarga de enviar los mensajes
