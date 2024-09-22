@@ -8,11 +8,13 @@ const MantasVinilicasMessage = require("../shared/Catalogos/MantasVinilicas/Mant
 const SublimacionMessage = require("../shared/Catalogos/Sublimacion/SublimacionMessages");
 const UniformeDeportivoMessage = require("../shared/Catalogos/UniformeDeportivo/UniformeDeportivoMessages");
 const RotulosMessage = require("../shared/Catalogos/Rotulos/RotulosMessages");
+const PromocionalesMessage = require("../shared/Catalogos/Promocionales/PromocionalesMessages");
 
 const RespuestasMantaVinilicas = require("../shared/Respuestas/RespuestasMantasVinilicas");
 const RespuestasSublimacion = require("../shared/Respuestas/RespuestasSublimacion");
 const RespuestasUniformeDeportivo = require("../shared/Respuestas/RespuestasUniformeDeportivo");
 const RespuestasRotulos = require("../shared/Respuestas/RespuestasRotulos");
+const RespuestasPromocionales = require("../shared/Respuestas/RespuestasPromocionales");
 
 function Process(textUser, number){
     textUser = textUser.toLowerCase();
@@ -44,6 +46,10 @@ function Process(textUser, number){
     }     
     else if(RespuestasRotulos.getAllRotulos().some(palabra => textUser.includes(palabra))){
         RotulosMessage.RotulosMessage(textUser, number);
+        return; 
+    }     
+    else if(RespuestasPromocionales.getAllPromocionales().some(palabra => textUser.includes(palabra))){
+        PromocionalesMessage.PromocionalesMessage(textUser, number);
         return; 
     }     
 

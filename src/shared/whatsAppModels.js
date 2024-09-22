@@ -43,6 +43,10 @@ function MessageList(number) {
                                 'id': '0004',
                                 'title': '💡 Rótulos con luz'
                             },
+                            {
+                                'id': '0005',
+                                'title': '🎁 promocionales'
+                            },
                         ]
                     }
                 ]
