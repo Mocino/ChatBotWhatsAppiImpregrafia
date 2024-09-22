@@ -1,27 +1,18 @@
 const whatsAppModel = require("../shared/whatsAppModels");
 const whatsAppService = require("../services/whatsappService");
-const camisaMessage = require("../shared/Catalogos/Camisas/camisaMessage");
-const pantalonMessage = require("../shared/Catalogos/Pantalones/pantalonesMessage");
-const calzadoMessage = require("../shared/Catalogos/Calzado/calzadoMessage");
+
 const abrigoMessage = require("../shared/Catalogos/Abrigos/abrigoMessage");
-const gorroMessage = require("../shared/Catalogos/Gorros/gorroMessage");
-
-
-
-const RespuestasCamisas = require("../shared/Respuestas/RespuestasCamisas");
 const RespuestasAbrigos = require("../shared/Respuestas/RespuestasAbrigos");
-const RespuestasPantalones = require("../shared/Respuestas/RespuestasPantalones");
-const RespuestasCalzado = require("../shared/Respuestas/RespuestasCalzado");
-const RespuestasGorros = require("../shared/Respuestas/RespuestasGorros");
 
 const MantasVinilicasMessage = require("../shared/Catalogos/MantasVinilicas/MantasVinilicasMessages");
 const SublimacionMessage = require("../shared/Catalogos/Sublimacion/SublimacionMessages");
 const UniformeDeportivoMessage = require("../shared/Catalogos/UniformeDeportivo/UniformeDeportivoMessages");
+const RotulosMessage = require("../shared/Catalogos/Rotulos/RotulosMessages");
 
 const RespuestasMantaVinilicas = require("../shared/Respuestas/RespuestasMantasVinilicas");
 const RespuestasSublimacion = require("../shared/Respuestas/RespuestasSublimacion");
 const RespuestasUniformeDeportivo = require("../shared/Respuestas/RespuestasUniformeDeportivo");
-//const { text } = require("express");
+const RespuestasRotulos = require("../shared/Respuestas/RespuestasRotulos");
 
 function Process(textUser, number){
     textUser = textUser.toLowerCase();
@@ -39,9 +30,6 @@ function Process(textUser, number){
         var model = whatsAppModel.MessageText("Gracias a ti por escribirme", number);
         models.push(model);
     }
-    
-
-
     else if(RespuestasMantaVinilicas.getAllMantasVinilicasKeywords().some(palabra => textUser.includes(palabra))){
         MantasVinilicasMessage.MantasVinilicasMessage(textUser, number);
         return; 
@@ -52,6 +40,10 @@ function Process(textUser, number){
     }     
     else if(RespuestasUniformeDeportivo.getAllUniformes().some(palabra => textUser.includes(palabra))){
         UniformeDeportivoMessage.UniformesDeportivosMessage(textUser, number);
+        return; 
+    }     
+    else if(RespuestasRotulos.getAllRotulos().some(palabra => textUser.includes(palabra))){
+        RotulosMessage.RotulosMessage(textUser, number);
         return; 
     }     
 
