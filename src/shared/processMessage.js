@@ -16,9 +16,11 @@ const RespuestasGorros = require("../shared/Respuestas/RespuestasGorros");
 
 const MantasVinilicasMessage = require("../shared/Catalogos/MantasVinilicas/MantasVinilicasMessages");
 const SublimacionMessage = require("../shared/Catalogos/Sublimacion/SublimacionMessages");
+const UniformeDeportivoMessage = require("../shared/Catalogos/UniformeDeportivo/UniformeDeportivoMessages");
 
 const RespuestasMantaVinilicas = require("../shared/Respuestas/RespuestasMantasVinilicas");
 const RespuestasSublimacion = require("../shared/Respuestas/RespuestasSublimacion");
+const RespuestasUniformeDeportivo = require("../shared/Respuestas/RespuestasUniformeDeportivo");
 //const { text } = require("express");
 
 function Process(textUser, number){
@@ -42,11 +44,15 @@ function Process(textUser, number){
 
     else if(RespuestasMantaVinilicas.getAllMantasVinilicasKeywords().some(palabra => textUser.includes(palabra))){
         MantasVinilicasMessage.MantasVinilicasMessage(textUser, number);
-        return; // Salimos de la función porque ProcessCamisa se encarga de enviar los mensajes
+        return; 
     }     
     else if(RespuestasSublimacion.getAllSublimacion().some(palabra => textUser.includes(palabra))){
         SublimacionMessage.SublimacionsMessage(textUser, number);
-        return; // Salimos de la función porque ProcessCamisa se encarga de enviar los mensajes
+        return; 
+    }     
+    else if(RespuestasUniformeDeportivo.getAllUniformes().some(palabra => textUser.includes(palabra))){
+        UniformeDeportivoMessage.UniformesDeportivosMessage(textUser, number);
+        return; 
     }     
 
 
