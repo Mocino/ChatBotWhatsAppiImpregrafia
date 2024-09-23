@@ -9,12 +9,14 @@ const SublimacionMessage = require("../shared/Catalogos/Sublimacion/SublimacionM
 const UniformeDeportivoMessage = require("../shared/Catalogos/UniformeDeportivo/UniformeDeportivoMessages");
 const RotulosMessage = require("../shared/Catalogos/Rotulos/RotulosMessages");
 const PromocionalesMessage = require("../shared/Catalogos/Promocionales/PromocionalesMessages");
+const BannerMessage = require("../shared/Catalogos/Banner/BannerMessages");
 
 const RespuestasMantaVinilicas = require("../shared/Respuestas/RespuestasMantasVinilicas");
 const RespuestasSublimacion = require("../shared/Respuestas/RespuestasSublimacion");
 const RespuestasUniformeDeportivo = require("../shared/Respuestas/RespuestasUniformeDeportivo");
 const RespuestasRotulos = require("../shared/Respuestas/RespuestasRotulos");
 const RespuestasPromocionales = require("../shared/Respuestas/RespuestasPromocionales");
+const RespuestasBanner = require("../shared/Respuestas/RespuestasBanner");
 
 function Process(textUser, number){
     textUser = textUser.toLowerCase();
@@ -50,6 +52,10 @@ function Process(textUser, number){
     }     
     else if(RespuestasPromocionales.getAllPromocionales().some(palabra => textUser.includes(palabra))){
         PromocionalesMessage.PromocionalesMessage(textUser, number);
+        return; 
+    }     
+    else if(RespuestasBanner.getAllBannerKeywords().some(palabra => textUser.includes(palabra))){
+        BannerMessage.BannerMessage(textUser, number);
         return; 
     }     
 

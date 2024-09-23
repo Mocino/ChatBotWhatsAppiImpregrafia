@@ -47,6 +47,10 @@ function MessageList(number) {
                                 'id': '0005',
                                 'title': '🎁 promocionales'
                             },
+                            {
+                                'id': '0006',
+                                'title': '🖼️ banners publicitarios'
+                            },
                         ]
                     }
                 ]
