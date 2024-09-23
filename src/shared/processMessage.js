@@ -10,6 +10,7 @@ const UniformeDeportivoMessage = require("../shared/Catalogos/UniformeDeportivo/
 const RotulosMessage = require("../shared/Catalogos/Rotulos/RotulosMessages");
 const PromocionalesMessage = require("../shared/Catalogos/Promocionales/PromocionalesMessages");
 const BannerMessage = require("../shared/Catalogos/Banner/BannerMessages");
+const FigurasMessage = require("../shared/Catalogos/Figuras/figurasMessage");
 
 const RespuestasMantaVinilicas = require("../shared/Respuestas/RespuestasMantasVinilicas");
 const RespuestasSublimacion = require("../shared/Respuestas/RespuestasSublimacion");
@@ -17,6 +18,7 @@ const RespuestasUniformeDeportivo = require("../shared/Respuestas/RespuestasUnif
 const RespuestasRotulos = require("../shared/Respuestas/RespuestasRotulos");
 const RespuestasPromocionales = require("../shared/Respuestas/RespuestasPromocionales");
 const RespuestasBanner = require("../shared/Respuestas/RespuestasBanner");
+const RespuestasFiguras = require("../shared/Respuestas/RespuestasFiguras");
 
 function Process(textUser, number){
     textUser = textUser.toLowerCase();
@@ -56,6 +58,10 @@ function Process(textUser, number){
     }     
     else if(RespuestasBanner.getAllBannerKeywords().some(palabra => textUser.includes(palabra))){
         BannerMessage.BannerMessage(textUser, number);
+        return; 
+    }     
+    else if(RespuestasFiguras.getAllFigurasKeywords().some(palabra => textUser.includes(palabra))){
+        FigurasMessage.FigurasMessage(textUser, number);
         return; 
     }     
 

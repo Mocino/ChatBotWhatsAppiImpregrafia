@@ -51,6 +51,10 @@ function MessageList(number) {
                                 'id': '0006',
                                 'title': '🖼️ banners publicitarios'
                             },
+                            {
+                                'id': '0007',
+                                'title': '🪆 figuras de PVC'
+                            },
                         ]
                     }
                 ]
