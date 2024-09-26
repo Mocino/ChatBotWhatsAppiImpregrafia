@@ -26,7 +26,7 @@ function PromocionalesList(number) {
                             },
                             {
                                 'id': 'plaquetas_vidrio',
-                                'title': '📜 Plaquetas de vidrio'
+                                'title': '📜 Plaquetas'
                             },
                             {
                                 'id': 'mouse_pad',

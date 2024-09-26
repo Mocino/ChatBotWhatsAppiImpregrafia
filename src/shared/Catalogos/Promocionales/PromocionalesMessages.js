@@ -1,6 +1,12 @@
 const promocionalesModel = require("../Promocionales/PromocionalesModel");
 const whatsAppService = require("../../../services/whatsappService");
 
+const RespuestaTazasPromocional = require("../../Respuestas/RespuestasPromocionales");
+
+const TipoTazas = require("../../Catalogos/Promocionales/TiposTazas/TipoTazasMessage"); 
+const TipoGorras = require("../../Catalogos/Promocionales/TipoGorras/TipoGorrasMessage"); 
+const TipoPlaquetas = require("../../Catalogos/Promocionales/TipoPlaquetas/TipoPlaquetasMessages"); 
+
 function PromocionalesMessage(textUser, number) {
     textUser = textUser.toLowerCase();
     var models = [];
@@ -13,20 +19,20 @@ function PromocionalesMessage(textUser, number) {
         var model = promocionalesModel.MessageText("🎁 Ha seleccionado la categoría de Promocionales. Seleccione un producto para obtener más información.", number);
         models.push(model);
     }
-    // Si el usuario selecciona "Tazas"
-    else if (textUser.includes('☕ tazas')) {
-        var model = promocionalesModel.MessageText("☕ Nuestras tazas personalizadas están disponibles a partir de 30 quetzales. Tenemos tazas mágicas, de color y transparentes.", number);
-        models.push(model);
+    // Si el usuario selecciona "Tazas ☕"
+    else if (RespuestaTazasPromocional.RespuestasTasas.some(keyword => textUser.includes(keyword))) {
+        TipoTazas.TiposTazas(textUser, number);
+        return; 
     }
     // Si el usuario selecciona "Platos decorativos"
     else if (textUser.includes('🍽️ platos decorativos')) {
         var model = promocionalesModel.MessageText("🍽️ Los platos decorativos personalizados son perfectos para ocasiones especiales y están disponibles desde 45 quetzales.", number);
         models.push(model);
     }
-    // Si el usuario selecciona "Plaquetas"
-    else if (textUser.includes('📜 plaquetas')) {
-        var model = promocionalesModel.MessageText("📜 Las plaquetas de vidrio grabadas están disponibles desde 100 quetzales, ideales para reconocimientos.", number);
-        models.push(model);
+    // Si el usuario selecciona "Plaquetas 📜"
+    else if (RespuestaTazasPromocional.RespuestasPlaquetas.some(keyword => textUser.includes(keyword))) {
+        TipoPlaquetas.TipoPlaquetas(textUser, number);
+        return; 
     }
     // Si el usuario selecciona "Mouse pad"
     else if (textUser.includes('🖱️ mouse pad')) {
@@ -34,9 +40,9 @@ function PromocionalesMessage(textUser, number) {
         models.push(model);
     }
     // Si el usuario selecciona "Gorras"
-    else if (textUser.includes('🧢 gorras')) {
-        var model = promocionalesModel.MessageText("🧢 Las gorras personalizadas están disponibles desde 25 quetzales.", number);
-        models.push(model);
+    else if (RespuestaTazasPromocional.RespuestasGorras.some(keyword => textUser.includes(keyword))) {
+        TipoGorras.TipoGorras(textUser, number);
+        return; 
     }
     // Si el usuario selecciona "Gabachas"
     else if (textUser.includes('🧑‍🍳 gabachas')) {

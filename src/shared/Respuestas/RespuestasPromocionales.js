@@ -3,7 +3,6 @@ module.exports = {
         "🎁 promocionales" // Emoji de regalo para representar la categoría de Promocionales
     ],
     PreguntasSecundariasMPromocionales: [
-        "☕ tazas", // Emoji de taza para representar las tazas
 
         "🍽️ platos decorativos", // Emoji de plato para representar platos decorativos
         
@@ -19,6 +18,7 @@ module.exports = {
     ],
     RespuestasTasas:[
         "☕ tazas", // Emoji de taza para representar las tazas
+        "☕ taza común", // Emoji de taza para representar las tazas
         "🍺 tarros cerveceros", // Emoji de tarro de cerveza
         "🥤 pachones térmicos", // Emoji de bebida para representar pachones térmicos
         "🖤 tazas mágicas", // Emoji de corazón negro para representar tazas mágicas
@@ -39,6 +39,9 @@ module.exports = {
         return [
             ...this.PreguntaPrincipalPromocionales,
             ...this.PreguntasSecundariasMPromocionales,
+            ...this.RespuestasTasas,
+            ...this.RespuestasPlaquetas,         
+            ...this.RespuestasGorras         
         ];
     }
 };
