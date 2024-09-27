@@ -17,14 +17,17 @@ function TipoPlaquetas(textUser, number) {
     else if (textUser.includes('🔮 plaquetas de vidrio')) {
         var model = TipoPlaquetasModel.MessageText("🔮 Ha Seleccionado Plaquetas de Vidrio. Este tipo de plaqueta cuesta alrededor de 75 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TipoPlaquetasModel.MessageButtons(number));
     }
     else if (textUser.includes('🪵 plaquetas de madera')) {
         var model = TipoPlaquetasModel.MessageText("🪵 Ha Seleccionado Plaquetas de Madera (MDF). Este tipo de plaqueta cuesta alrededor de 65 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TipoPlaquetasModel.MessageButtons(number));
     }
     else {
         var model = TipoPlaquetasModel.MessageText("❓ Lo siento, no entendí tu selección. Por favor, elige una opción válida.", number);
         models.push(model);
+        models.push(TipoPlaquetasModel.MessageButtons(number));
     }
 
     // Enviar los mensajes construidos

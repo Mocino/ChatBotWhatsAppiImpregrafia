@@ -17,26 +17,32 @@ function TiposTazas(textUser, number) {
     else if (textUser.includes('☕ taza común')) {
         var model = TiposTazasModel.MessageText("☕ Ha Seleccionado Taza Común. Este tipo de taza cuesta alrededor de 35 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TiposTazasModel.MessageButtons(number));
     }
     else if (textUser.includes('🍺 tarros cerveceros')) {
         var model = TiposTazasModel.MessageText("🍺 Ha Seleccionado Tarros Cerveceros. Este tipo de tarro cuesta alrededor de 50 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TiposTazasModel.MessageButtons(number));
     }
     else if (textUser.includes('🥤 pachones térmicos')) {
         var model = TiposTazasModel.MessageText("🥤 Ha Seleccionado Pachones Térmicos. Este tipo de pachón cuesta alrededor de 60 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TiposTazasModel.MessageButtons(number));
     }
     else if (textUser.includes('🖤 tazas mágicas')) {
         var model = TiposTazasModel.MessageText("🖤 Ha Seleccionado Tazas Mágicas. Este tipo de taza cuesta alrededor de 45 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TiposTazasModel.MessageButtons(number));
     }
     else if (textUser.includes('🌈 tazas de color')) {
         var model = TiposTazasModel.MessageText("🌈 Ha Seleccionado Tazas de Color. Este tipo de taza cuesta alrededor de 40 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TiposTazasModel.MessageButtons(number));
     }
     else if (textUser.includes('🍶 tazas transparentes')) {
         var model = TiposTazasModel.MessageText("🍶 Ha Seleccionado Tazas Transparentes. Este tipo de taza cuesta alrededor de 55 quetzales. ¿Desea comprar?", number);
         models.push(model);
+        models.push(TiposTazasModel.MessageButtons(number));
     }
     else {
         var model = TiposTazasModel.MessageText("❓ Lo siento, no entendí tu selección. Por favor, elige una opción válida.", number);

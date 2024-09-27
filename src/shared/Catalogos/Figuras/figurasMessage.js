@@ -16,10 +16,12 @@ function FigurasMessage(textUser, number) {
     else if (textUser.includes('🎭 figuras con relieve')) {
         const model = promocionalesModel.MessageText("🎭 Las figuras con relieve están disponibles en varias opciones. Contáctanos para más detalles.", number);
         models.push(model);
+        models.push(promocionalesModel.MessageButtons(number));
     } 
     else if (textUser.includes('🖼️ cuadros pvc')) {
         const model = promocionalesModel.MessageText("🖼️ Los cuadros PVC están disponibles en distintos tamaños y diseños. Pregunta por nuestras opciones.", number);
         models.push(model);
+        models.push(promocionalesModel.MessageButtons(number));
     } else {
         const model = promocionalesModel.MessageText("❓ Por favor, selecciona una opción válida de la categoría Figuras de PVC.", number);
         models.push(model);

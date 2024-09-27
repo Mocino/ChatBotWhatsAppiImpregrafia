@@ -5,13 +5,9 @@ module.exports = {
     PreguntasSecundariasMPromocionales: [
 
         "🍽️ platos decorativos", // Emoji de plato para representar platos decorativos
-        
-        "📜 plaquetas", // Emoji de bola de cristal para representar plaquetas de vidrio
-        
+                
         "🖱️ mouse pad", // Emoji de mouse para representar mouse pad
-        
-        "🧢 gorras", // Emoji de gorra para representar gorras de poliéster
-        
+                
         "🧑‍🍳 gabachas", // Emoji de chef para representar gabachas
         
         "🛏️ almohadas", // Emoji de cama para representar almohadas
@@ -32,8 +28,8 @@ module.exports = {
     ],
     RespuestasGorras:[
         "🧢 gorras", // Emoji de gorra 
-        "🧢 gorras de poliéster", // Emoji de gorra para representar gorras de poliéster
-        "🧢 gorras de gabardina", // Otro emoji de gorra para representar gorras de gabardina
+        "🧢🟠 gorras de poliéster", // Emoji de gorra para representar gorras de poliéster
+        "🧢🟦 gorras de gabardina", // Otro emoji de gorra para representar gorras de gabardina
     ],
     getAllPromocionales() {
         return [

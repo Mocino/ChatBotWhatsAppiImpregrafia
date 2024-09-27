@@ -18,26 +18,36 @@ function BannerMessage(textUser, number) {
     else if (textUser.includes('📏 roll up 2x80 cm')) {
         var model = bannerModel.MessageText("📏 El ROLL up de 2x80 cm está disponible desde 150 quetzales.", number);
         models.push(model);
+        models.push(bannerModel.MessageButtons(number));
+        
     }
     // Si el usuario selecciona "Banner X"
     else if (textUser.includes('🕸️ banner 1.80x80 cm')) {
         var model = bannerModel.MessageText("🕸️ El Banner X de 1.80x80 cm está disponible desde 120 quetzales.", number);
         models.push(model);
+        models.push(bannerModel.MessageButtons(number));
+
     }
     // Si el usuario selecciona "Mini banner X"
     else if (textUser.includes('🕷️ minibanner 22x44 cm')) {
         var model = bannerModel.MessageText("🕷️ El Mini Banner X de 22x44 cm está disponible desde 80 quetzales.", number);
         models.push(model);
+        models.push(bannerModel.MessageButtons(number));
+
     }
     // Si el usuario selecciona "Mini ROLL up"
     else if (textUser.includes('📐 mini roll up')) {
         var model = bannerModel.MessageText("📐 El Mini ROLL up está disponible desde 100 quetzales.", number);
         models.push(model);
+        models.push(bannerModel.MessageButtons(number));
+
     }
     // Si el usuario selecciona "Banderola tipo gota"
     else if (textUser.includes('💧 banderola tipo gota')) {
         var model = bannerModel.MessageText("💧 La Banderola tipo gota está disponible desde 200 quetzales.", number);
         models.push(model);
+        models.push(bannerModel.MessageButtons(number));
+
     }
     // Si el texto no coincide con ninguna opción válida
     else {

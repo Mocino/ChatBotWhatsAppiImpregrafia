@@ -45,6 +45,46 @@ function BannerList(number) {
     return data;
 }
 
+function MessageButtons(number) {
+    const data = JSON.stringify({
+        'messaging_product': 'whatsapp',
+        'to': number,
+        'type': 'interactive',
+        'interactive': {
+            'type': 'button',
+            'body': {
+                'text': 'Seleccione una opción:'
+            },
+            'action': {
+                'buttons': [
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'title': 'Sí, comprar',
+                            'id': 'comprar' // Este campo 'id' es el correcto para manejar la respuesta
+                        }
+                    },
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'title': 'Volver al menu',
+                            'id': 'no_comprar'
+                        }
+                    },
+                    {
+                        'type': 'reply',
+                        'reply': {
+                            'title': 'Ver medidas otra vez', // Título más corto
+                            'id': 'ver_medidas'
+                        }
+                    }
+                ]
+            }
+        }
+    });
+    return data;
+}
+
 // Modelo para mensajes de texto simples
 function MessageText(text, number) {
     const data = JSON.stringify({
@@ -61,5 +101,6 @@ function MessageText(text, number) {
 
 module.exports = {
     BannerList,
-    MessageText
+    MessageText,
+    MessageButtons
 };
