@@ -17,11 +17,13 @@ function RotulosMessage(textUser, number) {
     else if (textUser.includes('🔠 letras tipo block')) {
         var model = rotulosModel.MessageText("🔠 Las letras tipo block con luz tienen un costo de 500 quetzales por metro cuadrado.", number);
         models.push(model);
+        models.push(rotulosModel.MessageButtons(number));
     } 
     // Si el usuario selecciona "Logos"
     else if (textUser.includes('🔰 logos')) {
         var model = rotulosModel.MessageText("🔰 Los logos iluminados tienen un costo de 750 quetzales, dependiendo del tamaño y los materiales.", number);
         models.push(model);
+        models.push(rotulosModel.MessageButtons(number));
     } 
     // Si el texto no coincide con ninguna opción válida
     else {

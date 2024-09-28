@@ -82,7 +82,7 @@ function MessageButtons(number) {
                     {
                         'type': 'reply',
                         'reply': {
-                            'title': 'Ver medidas otra vez', // Título más corto
+                            'title': 'Ver promos otra vez', // Título más corto
                             'id': 'ver_medidas'
                         }
                     }

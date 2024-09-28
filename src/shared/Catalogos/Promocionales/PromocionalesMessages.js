@@ -12,7 +12,7 @@ function PromocionalesMessage(textUser, number) {
     var models = [];
 
     // Si el usuario selecciona "Promocionales"
-    if (textUser.includes('🎁 promocionales')) {
+    if (textUser.includes('🎁 promocionales') || textUser.includes('ver promos otra vez')) {
         var modelList = promocionalesModel.PromocionalesList(number);
         models.push(modelList);
 

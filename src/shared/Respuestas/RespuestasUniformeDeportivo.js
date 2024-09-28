@@ -3,7 +3,7 @@ module.exports = {
         "🏃‍♂️ uniformes deportivos"
     ],
     PreguntasSecundariasMUniformes: [
-        "👕 manga larga",
+        "👕 manga larga", "ver medidas otra vez",
         "👕 manga corta",
         "🧑‍🤝‍🧑 adultos",
         "👶 niños",

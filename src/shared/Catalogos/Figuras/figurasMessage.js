@@ -6,7 +6,7 @@ function FigurasMessage(textUser, number) {
     textUser = textUser.toLowerCase();
     let models = [];
 
-    if (textUser.includes('🪆 figuras de pvc')) {
+    if (textUser.includes('🪆 figuras de pvc') || textUser.includes('ver figuras otra vez')) {
         const modelList = promocionalesModel.FigurasList(number);
         models.push(modelList);  // Mensaje de opciones
 
@@ -16,6 +16,10 @@ function FigurasMessage(textUser, number) {
     else if (textUser.includes('🎭 figuras con relieve')) {
         const model = promocionalesModel.MessageText("🎭 Las figuras con relieve están disponibles en varias opciones. Contáctanos para más detalles.", number);
         models.push(model);
+
+        const imageModels = promocionalesModel.SampleImage(number);
+        models = models.concat(imageModels);
+
         models.push(promocionalesModel.MessageButtons(number));
     } 
     else if (textUser.includes('🖼️ cuadros pvc')) {

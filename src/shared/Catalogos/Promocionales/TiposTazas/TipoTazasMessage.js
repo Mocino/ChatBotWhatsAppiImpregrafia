@@ -6,7 +6,7 @@ function TiposTazas(textUser, number) {
     var models = [];
 
     // Lista de opciones cuando el usuario quiere ver los tipos de tazas
-    if (textUser.includes('☕ tazas')) {
+    if (textUser.includes('☕ tazas') || textUser.includes('Ver tazas otra vez')) {
         var modelList = TiposTazasModel.TiposTazasList(number);
         models.push(modelList);    
         var responseMessage = "☕ Aquí tienes nuestra variedad de tazas y más. Selecciona la opción que te interesa.";

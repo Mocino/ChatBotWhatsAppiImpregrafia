@@ -13,7 +13,7 @@ module.exports = {
         "🛏️ almohadas", // Emoji de cama para representar almohadas
     ],
     RespuestasTasas:[
-        "☕ tazas", // Emoji de taza para representar las tazas
+        "☕ tazas", "ver tazas otra vez", // Emoji de taza para representar las tazas
         "☕ taza común", // Emoji de taza para representar las tazas
         "🍺 tarros cerveceros", // Emoji de tarro de cerveza
         "🥤 pachones térmicos", // Emoji de bebida para representar pachones térmicos
@@ -22,12 +22,12 @@ module.exports = {
         "🍶 tazas transparentes", // Emoji de botella de sake para representar tazas transparentes
     ],
     RespuestasPlaquetas:[
-        "📜 plaquetas", 
+        "📜 plaquetas", "ver plaquetas de nuevo",
         "🔮 plaquetas de vidrio", // Emoji de bola de cristal para representar plaquetas de vidrio
         "🪵 plaquetas de madera", // Emoji de tronco de madera para representar plaquetas de MDF        
     ],
     RespuestasGorras:[
-        "🧢 gorras", // Emoji de gorra 
+        "🧢 gorras", "ver gorras otra vez", // Emoji de gorra 
         "🧢🟠 gorras de poliéster", // Emoji de gorra para representar gorras de poliéster
         "🧢🟦 gorras de gabardina", // Otro emoji de gorra para representar gorras de gabardina
     ],

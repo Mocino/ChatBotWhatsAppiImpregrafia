@@ -3,7 +3,7 @@ module.exports = {
         "🪆 figuras de pvc"
     ],
     RespuestasFiguras: [
-        "🎭 figuras con relieve", 
+        "🎭 figuras con relieve", "Ver figuras otra vez",
         "🖼️ cuadros pvc"
     ],
 

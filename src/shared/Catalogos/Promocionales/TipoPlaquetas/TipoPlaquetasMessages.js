@@ -6,7 +6,7 @@ function TipoPlaquetas(textUser, number) {
     var models = [];
 
     // Lista de opciones cuando el usuario quiere ver los tipos de plaquetas
-    if (textUser.includes('📜 plaquetas')) {
+    if (textUser.includes('📜 plaquetas') || textUser.includes('ver plaquetas de nuevo')) {
         var modelList = TipoPlaquetasModel.TipoPlaquetasList(number);
         models.push(modelList);
         var responseMessage = "📜 Aquí tienes nuestra variedad de plaquetas. Selecciona la opción que te interesa.";

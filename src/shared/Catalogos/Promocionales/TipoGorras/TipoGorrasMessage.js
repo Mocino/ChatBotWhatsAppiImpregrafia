@@ -6,7 +6,7 @@ function TipoGorras(textUser, number) {
     var models = [];
 
     // Lista de opciones cuando el usuario selecciona "🧢 gorras"
-    if (textUser.includes('🧢 gorras')) {
+    if (textUser.includes('🧢 gorras') || textUser.includes('ver gorras otra vez')) {
         var modelList = TipoGorrasModel.TiposGorrasList(number);
         models.push(modelList);
 

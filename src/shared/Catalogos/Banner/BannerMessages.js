@@ -7,7 +7,7 @@ function BannerMessage(textUser, number) {
     var models = [];
 
     // Si el usuario selecciona "Banners publicitarios"
-    if (textUser.includes('🖼️ banners publicitarios')) {
+    if (textUser.includes('🖼️ banners publicitarios') || textUser.includes('ver banners otra vez')) {
         var modelList = bannerModel.BannerList(number);
         models.push(modelList);
 
